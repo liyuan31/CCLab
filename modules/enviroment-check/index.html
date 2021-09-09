@@ -13,12 +13,11 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../../static/js/onboard.min.js"></script>
     <style>
         #container-main {
-            margin: 2%;
             text-align: center;
         }
-
         #banner {
             margin: 4%;
         }
@@ -33,29 +32,15 @@
             <h4>Cognitive Control Laboratory</h4>
         </div>
         <div class="row">
-            <div class="col-3">
+            <div class="col">
                 <p>Please use your mouse to click the button on the right with your scroll wheel.</p>
+                <img src="https://exp.leberatory.org/files/images/scroll_wheel.png" alt="Scroll Wheel" style="width:100px;height:100px;">
             </div>
             <div class="col">
                 <button type="button" class="btn btn-primary btn-lg" id="button">Click Me</button>
             </div>
         </div>
-        <div class="row">
-            <img src="https://exp.leberatory.org/files/images/scroll_wheel.png" alt="Scroll Wheel" style="width:100px;height:100px;">
-        </div>
     </div>
-    <script>
-        $('#button').mousedown(function (event) {
-            switch (event.which) {
-                case 2:
-                    location.href = '?click=success';
-                    break;
-                default:
-                    alert('Please click the button with your scroll wheel!');
-            }
-        });
-        console.log(window.location.search)
-    </script>
 </body>
 
 </html>
