@@ -11,6 +11,10 @@ window.onload = () => {
     const urlParams = window.location.search;
     const params = new URLSearchParams(urlParams);
     if(params.get('click')==='success') {
-        location.href = 'consent.html'.concat(urlParams)
+        $('#button').remove();
+        $('#button-col').append("<p>Thank you!</p>");
+        setTimeout( ()=> {
+            location.href = 'consent.html'.concat(urlParams)
+        }, 1000 );
     }
 }
