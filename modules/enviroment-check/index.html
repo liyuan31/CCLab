@@ -18,44 +18,43 @@
             margin: 2%;
             text-align: center;
         }
+
+        #banner {
+            margin: 4%;
+        }
     </style>
     <title>Experiment Environment Check</title>
 </head>
 
 <body>
     <div class="container" id="container-main">
-        <div class="row">
+        <div class="row" id="banner">
             <h1>Online Experiments</h1>
             <h4>Cognitive Control Laboratory</h4>
         </div>
         <div class="row">
-            <div class="col">
-                <p>Please use your mouse to click on the button with your scroll wheel.</p>
+            <div class="col-3">
+                <p>Please use your mouse to click the button on the right with your scroll wheel.</p>
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary btn-lg" id="button">Large button</button>
+                <button type="button" class="btn btn-primary btn-lg" id="button">Click Me</button>
             </div>
-            <div class="col">
-                Column
-            </div>
+        </div>
+        <div class="row">
+            <img src="https://exp.leberatory.org/files/images/scroll_wheel.png" alt="Scroll Wheel" style="width:100px;height:100px;">
         </div>
     </div>
     <script>
         $('#button').mousedown(function (event) {
             switch (event.which) {
-                case 1:
-                    alert('Left Mouse button pressed.');
-                    break;
                 case 2:
-                    alert('Middle Mouse button pressed.');
-                    break;
-                case 3:
-                    alert('Right Mouse button pressed.');
+                    location.href = '?click=success';
                     break;
                 default:
-                    alert('You have a strange Mouse!');
+                    alert('Please click the button with your scroll wheel!');
             }
         });
+        console.log(window.location.search)
     </script>
 </body>
 
