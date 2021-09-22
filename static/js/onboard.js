@@ -7,7 +7,7 @@ window.onload = () => {
                 // } else {
                 //     location.href = '?click=success';
                 // }
-                location.href = 'launch.php?'.concat(urlParams);
+                location.href = 'launch.php'.concat(urlParams);
                 break;
             default:
                 alert('Please click the button with your scroll wheel!');
