@@ -2,7 +2,11 @@ window.onload = () => {
     $('#button').mousedown(function (event) {
         switch (event.which) {
             case 2:
-                location.href = '?click=success';
+                if (urlParams.length > 0) {
+                    location.href = urlParams.concat('&click=success');
+                } else {
+                    location.href = '&click=success';
+                }
                 break;
             default:
                 alert('Please click the button with your scroll wheel!');
