@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="module" src="index.js"></script>
         <title>Document</title>
         <style>
             html,
             body {
                 margin: 0;
+                padding: 0;
                 min-height: 100vmin;
             }
 
@@ -37,7 +39,9 @@
 
             .menu {
                 position: relative;
-                height: 10vmin;
+                height: 50px;
+                color: white;
+                background-color: black;
             }
 
             .stimuli_container {
@@ -65,7 +69,9 @@
     </head>
 
     <body>
-        <!-- <div class="menu">This is a menu</div> -->
+        <div class="menu">
+            <div>Finding Ts!</div>
+        </div>
         <div id="cloud"></div>
         <svg id="effect" width="0" height="0">
             <filter id="filter">
@@ -88,38 +94,5 @@
                 </svg>
             </div>
         </div>
-        <script>
-            function create_a_T(x, y, size, weight, orient = "random") {}
-
-            function rn(from, to) {
-                return ~~(Math.random() * (to - from + 1)) + from;
-            }
-
-            function rs() {
-                return arguments[rn(1, arguments.length) - 1];
-            }
-
-            function boxShadows(max) {
-                let ret = [];
-                for (let i = 0; i < max; ++i) {
-                    ret.push(`
-                ${rn(1, 100)}vw ${rn(1, 100)}vh ${rn(20, 40)}vmin ${rn(
-                        1,
-                        20
-                    )}vmin
-                ${rs("#808080", "#696969", "#A9A9A9", "#C0C0C0", "#D3D3D3")}
-              `);
-                }
-                return ret.join(",");
-            }
-
-            const cloud = document.querySelector("#cloud");
-            function update() {
-                cloud.style.boxShadow = boxShadows(100);
-            }
-
-            window.addEventListener("load", update);
-            document.addEventListener("click", update);
-        </script>
     </body>
 </html>
