@@ -1,3 +1,9 @@
+/**
+ * Functions that handles shadow randering.
+ *
+ * @author Walden Y. Li
+ * @version 1.0 (2/11/2022)
+ */
 export function initialize() {
     function rn(from, to) {
         return ~~(Math.random() * (to - from + 1)) + from;
